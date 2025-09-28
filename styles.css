@@ -35,44 +35,40 @@ body {
 .book {
     display: flex; 
     flex-direction: column; 
+    align-items: center; /* Center the image and price bar horizontally */
     background-color: #ffffff; /* Background color: #ffffff */
     margin-bottom: 20px;
-    padding: 0; 
+    padding: 20px 0 0 0; /* Add top/side padding, remove bottom padding */
     border: 1px solid #e0e0e0; 
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); 
 }
 
-.book-cover-area {
-    display: flex;
-    justify-content: center;
-    padding: 20px; 
-}
-
-.book img {
+/* Image Styling */
+.book .cover-image {
     width: 150px; 
     height: 220px; 
     object-fit: cover;
+    margin-bottom: 10px;
 }
 
 /* Book Title and Author area */
-.book-info {
-    padding: 10px 20px 10px 20px; 
-}
-
-/* *** NOTE: Targeting <h2> now due to test requirement (FIX 1) *** */
 .book .title { 
     font-size: 1.1em;
     font-weight: bold;
-    margin: 0;
+    margin: 10px 0 5px 0;
     color: #333333;
     text-transform: uppercase; 
+    text-align: center;
+    padding: 0 20px; /* Add padding for text */
 }
 
 .book .author {
     color: #777777; /* Author color: #777777 (rgb(119, 119, 119)) */
     font-size: 0.9em;
     margin-top: 5px;
-    margin-bottom: 0;
+    margin-bottom: 15px;
+    padding: 0 20px; /* Add padding for text */
+    text-align: center;
 }
 
 /* Price block styling (full-width green bar) */
@@ -83,9 +79,9 @@ body {
     text-align: center;
     padding: 10px 0;
     font-size: 1.1em;
-    margin-top: 15px; 
-    /* Remove any border-radius since the test expects none by default */
-    border-radius: 0; 
+    /* Crucial: Make the price block span the full width of the parent .book */
+    width: 100%; 
+    margin-top: auto; /* Push the price block to the bottom of the flex container */
 }
 
 /* Specific overrides for titles that are NOT all caps in the image (Sacred Games) */
